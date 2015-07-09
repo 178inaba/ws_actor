@@ -2,11 +2,12 @@
 .sbtserver
 logs
 target
-project/play-fork-run.sbt
-project/sbt-ui.sbt
 /.idea
 /.idea_modules
 /.classpath
 /.project
 /.settings
 /RUNNING_PID
+/project/idea.sbt
+/project/play-fork-run.sbt
+/project/sbt-ui.sbt
