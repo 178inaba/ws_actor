@@ -1,14 +1,12 @@
 package controllers;
 
-import play.*;
-import play.mvc.*;
-
-import views.html.*;
+import model.Match;
+import play.mvc.Controller;
+import play.mvc.WebSocket;
 
 public class Application extends Controller {
 
-    public Result index() {
-        return ok(index.render("Your new application is ready."));
-    }
-
+	public WebSocket<String> socket() {
+		return WebSocket.withActor(Match::props);
+	}
 }
