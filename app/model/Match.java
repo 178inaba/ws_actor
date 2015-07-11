@@ -42,10 +42,10 @@ public class Match extends UntypedActor {
 	}
 
 	@Override
-	public void onReceive(Object msg) throws Exception {
-		Logger.info("Match: onReceive(): [msg: " + msg.toString() + "]");
-		if (msg instanceof String) {
-			JsonNode json = Json.parse(msg.toString());
+	public void onReceive(Object obj) throws Exception {
+		Logger.info("Match: onReceive(): [obj: " + obj.toString() + "]");
+		if (obj instanceof String) {
+			JsonNode json = Json.parse(obj.toString());
 			String cmd = json.get("cmd").asText();
 			if (cmd.equals("match")) {
 				if (waitList.size() == 0) {
