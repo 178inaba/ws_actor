@@ -1,4 +1,4 @@
-package controllers;
+package controller;
 
 import model.Match;
 import play.mvc.Controller;

@@ -6,7 +6,7 @@
 GET     /                           controllers.Assets.at(path="/public/html", file="index.html")
 
 # Match websocket
-GET     /match                      controllers.Application.socket()
+GET     /match                      controller.Application.socket()
 
 # Favicon
 GET     /favicon.ico                controllers.Assets.at(path="/public/img", file="favicon.ico")

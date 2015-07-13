@@ -2,7 +2,7 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import controllers.Application;
+import controller.Application;
 import org.junit.Test;
 import play.Logger;
 import play.libs.Akka;
