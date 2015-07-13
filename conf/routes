@@ -5,7 +5,7 @@
 # Home page
 GET     /                           controllers.Assets.at(path="/public/html", file="index.html")
 
-# Match websocket
+# WebSocket
 GET     /match                      controller.Application.socket()
 
 # Favicon
