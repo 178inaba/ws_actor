@@ -1,18 +1,11 @@
 package model.base;
 
 import akka.actor.ActorRef;
-import akka.actor.Props;
 import akka.actor.UntypedActor;
 import play.Logger;
 
 public abstract class Base extends UntypedActor {
 	private final ActorRef out;
-
-	public static Props props(ActorRef out) {
-		Logger.info("Base: props()");
-
-		return Props.create(Base.class, out);
-	}
 
 	public Base(ActorRef out) {
 		Logger.info("Base: Base()");
@@ -22,7 +15,7 @@ public abstract class Base extends UntypedActor {
 
 	@Override
 	public void onReceive(Object message) throws Exception {
-		Logger.info("Base: onReceive(): [message: " + message.toString() + "]");
+		Logger.info("Base: onReceive(): [message: " + message.toString() + "] [" + getInt() + "]");
 
 		if (message instanceof String) {
 			Logger.info("Base: onReceive(): message instanceof String");
@@ -33,4 +26,6 @@ public abstract class Base extends UntypedActor {
 	public void postStop() throws Exception {
 		Logger.info("Base: postStop()");
 	}
+
+	protected abstract int getInt();
 }
