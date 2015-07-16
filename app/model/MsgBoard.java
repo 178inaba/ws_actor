@@ -7,51 +7,51 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import play.Logger;
 import play.libs.Json;
 
-public class MessageB extends UntypedActor {
+public class MsgBoard extends UntypedActor {
 
 	private final ActorRef out;
 
-	private String messageBox = "";
+	private String messageBoard = "";
 
 	public static Props props(ActorRef out) {
-		Logger.info("MessageB: props()");
+		Logger.info("MsgBoard: props()");
 
-		return Props.create(MessageB.class, out);
+		return Props.create(MsgBoard.class, out);
 	}
 
-	public MessageB(ActorRef out) {
-		Logger.info("MessageB: MessageB()");
+	public MsgBoard(ActorRef out) {
+		Logger.info("MsgBoard: MsgBoard()");
 
 		this.out = out;
 
 		// send
 		ObjectNode msg = Json.newObject();
-		msg.put("message", "MessageB start");
+		msg.put("message", "MsgBoard start");
 		out.tell(msg.toString(), self());
 	}
 
 	@Override
 	public void onReceive(Object message) throws Exception {
-		Logger.info("MessageB: onReceive(): [obj: " + message.toString() + "] [this: " + this.toString() + "]");
+		Logger.info("MsgBoard: onReceive(): [obj: " + message.toString() + "] [this: " + this.toString() + "]");
 
 		if (message instanceof String) {
-			Logger.info("MessageB: onReceive(): message instanceof String");
+			Logger.info("MsgBoard: onReceive(): message instanceof String");
 		}
 
 		// update
-		String before = messageBox;
-		messageBox = message.toString();
+		String before = messageBoard;
+		messageBoard = message.toString();
 
 		// send
 		ObjectNode msg = Json.newObject();
-		msg.put("message", "update messageBox");
+		msg.put("message", "update messageBoard");
 		msg.put("before", before);
-		msg.put("after", messageBox);
+		msg.put("after", messageBoard);
 		out.tell(msg.toString(), self());
 	}
 
 	@Override
 	public void postStop() throws Exception {
-		Logger.info("MessageB: postStop()");
+		Logger.info("MsgBoard: postStop()");
 	}
 }

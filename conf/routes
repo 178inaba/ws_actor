@@ -6,9 +6,9 @@
 GET     /                           controllers.Assets.at(path="/public/html", file="index.html")
 
 # WebSocket
-GET     /match                      controller.Application.socket()
-GET     /msga                       controller.Application.msga()
-GET     /msgb                       controller.Application.msgb()
+GET     /match                      controller.Application.match()
+GET     /child                      controller.Application.child()
+GET     /msg_board                  controller.Application.msgBoard()
 
 # Favicon
 GET     /favicon.ico                controllers.Assets.at(path="/public/img", file="favicon.ico")

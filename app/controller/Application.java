@@ -1,8 +1,8 @@
 package controller;
 
 import model.Match;
-import model.MessageA;
-import model.MessageB;
+import model.Child;
+import model.MsgBoard;
 import play.Logger;
 import play.mvc.Controller;
 import play.mvc.WebSocket;
@@ -15,7 +15,7 @@ public class Application extends Controller {
 		Logger.info("Application: Application()");
 	}
 
-	public WebSocket<String> socket() {
+	public WebSocket<String> match() {
 		Logger.info("request(): " + request().toString());
 		Logger.info("request().body(): " + request().body());
 
@@ -30,11 +30,11 @@ public class Application extends Controller {
 		return WebSocket.withActor(Match::props);
 	}
 
-	public WebSocket<String> msga() {
-		return WebSocket.withActor(MessageA::props);
+	public WebSocket<String> child() {
+		return WebSocket.withActor(Child::props);
 	}
 
-	public WebSocket<String> msgb() {
-		return WebSocket.withActor(MessageB::props);
+	public WebSocket<String> msgBoard() {
+		return WebSocket.withActor(MsgBoard::props);
 	}
 }

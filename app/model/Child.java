@@ -5,19 +5,19 @@ import akka.actor.Props;
 import model.base.Base;
 import play.Logger;
 
-public class MessageA extends Base {
-	public MessageA(ActorRef out) {
+public class Child extends Base {
+	public Child(ActorRef out) {
 		super(out);
 	}
 
 	public static Props props(ActorRef out) {
-		Logger.info("MessageA: props()");
+		Logger.info("Child: props()");
 
-		return Props.create(MessageA.class, out);
+		return Props.create(Child.class, out);
 	}
 
 	@Override
 	protected int getInt() {
-		return 22;
+		return 26;
 	}
 }
