@@ -8,6 +8,7 @@ GET     /                           controllers.Assets.at(path="/public/html", f
 # WebSocket
 GET     /match                      controller.Application.socket()
 GET     /msga                       controller.Application.msga()
+GET     /msgb                       controller.Application.msgb()
 
 # Favicon
 GET     /favicon.ico                controllers.Assets.at(path="/public/img", file="favicon.ico")
