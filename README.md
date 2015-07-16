@@ -12,4 +12,7 @@ This is my experiment Play application
 * variable update from client.
  * MsgBoard
 
+use client is
+http://www.websocket.org/echo.html
+
 This file will be packaged with your application, when using `activator dist`.
