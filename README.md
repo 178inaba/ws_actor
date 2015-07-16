@@ -2,6 +2,8 @@
 
 This is my experiment Play application
 
+## description
+
 * nomal websocket and get request header.
  * Match
 
@@ -12,7 +14,17 @@ This is my experiment Play application
 * variable update from client.
  * MsgBoard
 
-use client is
+test client using now is  
 http://www.websocket.org/echo.html
 
-This file will be packaged with your application, when using `activator dist`.
+## run
+
+`activator ui`
+
+## TODO
+
+* make test client
+
+## licence
+
+MIT
