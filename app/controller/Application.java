@@ -1,7 +1,7 @@
 package controller;
 
-import model.Match;
 import model.Child;
+import model.Match;
 import model.MsgBoard;
 import play.Logger;
 import play.mvc.Controller;
@@ -15,16 +15,20 @@ public class Application extends Controller {
 		Logger.info("Application: Application()");
 	}
 
-	public WebSocket<String> match() {
-		Logger.info("request(): " + request().toString());
-		Logger.info("request().body(): " + request().body());
+	public WebSocket<String> matchSock() {
+		try {
+			Logger.info("request(): " + request().toString());
+			Logger.info("request().body(): " + request().body());
 
-		for (Map.Entry<String, String[]> header : request().headers().entrySet()) {
-			Logger.info("header: [k: " + header.getKey() + "]");
+			for (Map.Entry<String, String[]> header : request().headers().entrySet()) {
+				Logger.info("header: [k: " + header.getKey() + "]");
 
-			for (String v : header.getValue()) {
-				Logger.info("\theader: [v: " + v + "]");
+				for (String v : header.getValue()) {
+					Logger.info("\theader: [v: " + v + "]");
+				}
 			}
+		} catch (Exception e) {
+			Logger.info("log exception: " + e.toString());
 		}
 
 		return WebSocket.withActor(Match::props);

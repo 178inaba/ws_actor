@@ -6,7 +6,7 @@
 GET     /                           controllers.Assets.at(path="/public/html", file="index.html")
 
 # WebSocket
-GET     /match                      controller.Application.match()
+GET     /match                      controller.Application.matchSock()
 GET     /child                      controller.Application.child()
 GET     /msg_board                  controller.Application.msgBoard()
 

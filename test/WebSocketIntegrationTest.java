@@ -22,7 +22,7 @@ public class WebSocketIntegrationTest {
 	@Test
 	public void test() {
 		Application app = new Application();
-		WebSocket<String> ws = app.socket();
+		WebSocket<String> ws = app.matchSock();
 
 		running(fakeApplication(inMemoryDatabase()), () -> {
 			Props wsProps = ws.actorProps(Akka.system().actorOf(MockActor.props));
