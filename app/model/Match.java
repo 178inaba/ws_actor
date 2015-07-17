@@ -43,6 +43,9 @@ public class Match extends UntypedActor {
 	@Override
 	public void onReceive(Object obj) throws Exception {
 		Logger.info("Match: onReceive(): [obj: " + obj.toString() + "]");
+		Logger.info("Match: onReceive(): [self(): " + self() + "] [sender(): " + sender() + "]");
+		Logger.info("Match: onReceive(): [self().path(): " + self().path() + "] [sender().path(): " + sender().path() + "]");
+
 		if (obj instanceof String) {
 			JsonNode json = Json.parse(obj.toString());
 			String cmd = json.get("cmd").asText();
