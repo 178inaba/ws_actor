@@ -14,6 +14,9 @@ This is my experiment Play application
 * variable update from client.
  * MsgBoard
 
+* use Scheduler.
+ * CountdownTimer
+
 test client using now is  
 http://www.websocket.org/echo.html
 
