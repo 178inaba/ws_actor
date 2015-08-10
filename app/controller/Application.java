@@ -1,6 +1,7 @@
 package controller;
 
 import model.Child;
+import model.CountdownTimer;
 import model.Match;
 import model.MsgBoard;
 import play.Logger;
@@ -40,5 +41,9 @@ public class Application extends Controller {
 
 	public WebSocket<String> msgBoard() {
 		return WebSocket.withActor(MsgBoard::props);
+	}
+
+	public WebSocket<String> countdownTimer() {
+		return WebSocket.withActor(CountdownTimer::props);
 	}
 }
