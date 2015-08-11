@@ -1,4 +1,4 @@
-var ws = new WebSocket("ws://" + location.host + "/match");
+var ws = new WebSocket("ws://" + location.host + "/match_sock");
 var id = 0;
 
 // set event handler

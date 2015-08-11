@@ -4,10 +4,11 @@
 
 # Home page
 GET     /                           controllers.Assets.at(path="/public/html", file="index.html")
+GET     /match                      controllers.Assets.at(path="/public/html", file="match.html")
 GET     /countdown                  controllers.Assets.at(path="/public/html", file="countdown.html")
 
 # WebSocket
-GET     /match                      controller.Application.matchSock()
+GET     /match_sock                 controller.Application.matchSock()
 GET     /child                      controller.Application.child()
 GET     /msg_board                  controller.Application.msgBoard()
 GET     /cd_sock                    controller.Application.countdownTimer()
