@@ -52,7 +52,7 @@ public class CountdownTimer extends UntypedActor {
 	public static Cancellable countdownScheduler(int limit, int interval, ActorRef target) {
 		final long lmtDate = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis()) + limit;
 
-		Cancellable c = Akka.system().scheduler().schedule(Duration.create(interval, TimeUnit.SECONDS),
+		Cancellable c = Akka.system().scheduler().schedule(Duration.Zero(),
 				Duration.create(interval, TimeUnit.SECONDS),
 				() -> {
 					Logger.info("tell schedule target: " + target.toString());
